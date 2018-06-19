@@ -10,13 +10,14 @@ import UIKit
 
 extension Int {
     
-    /*
-        - Method is ',' print the value of an Int type three digits
-        - Use when expression to money
-        - Return type is 'String'
-        - ex)1000.threeDigitsComma => 1,000
-    */
     var threeDigitsComma: String {
+        /*
+         - Member variable is ',' print the value of an Int type three digits
+         - Use when expression to money
+         - Return type is 'String'
+         - ex)1000.threeDigitsComma => 1,000
+         */
+        
         let value: NSNumber = self as NSNumber
         
         let formatter = NumberFormatter()
@@ -28,3 +29,20 @@ extension Int {
     
 }
 
+extension String {
+    
+    var isCheckValidEmail: Bool {
+        /*
+         - Member variable is check email format to regular expreesion
+         - Use when check email format
+         - Return type is 'Bool'
+         - ex) "myoungsc.dev@gamil.com".isCheckValidEmail -> true
+         */
+        
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,64}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)
+        
+        return emailPredicate.evaluate(with: self)
+    }
+    
+}
