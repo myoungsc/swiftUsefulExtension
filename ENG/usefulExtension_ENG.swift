@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//MARK: ## Int Extension ##
 extension Int {
     
     var threeDigitsComma: String {
@@ -29,6 +30,7 @@ extension Int {
     
 }
 
+//MARK: ## String Extension ##
 extension String {
     
     var isCheckValidEmail: Bool {
@@ -43,6 +45,23 @@ extension String {
         let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)
         
         return emailPredicate.evaluate(with: self)
+    }
+    
+}
+
+//MARK: ## UIScrollView Extension ##
+extension UIScrollView {
+    
+    func moveToBottom(_ animate: Bool) {
+        /*
+         - UIScrollView content move to bottom by function
+         - Use when UIScrollView content move to bottom
+         - Return type is nil
+         - ex) UIScrollView.moveToBottom(true)
+         */
+        
+        let bottomPoint = CGPoint(x: 0, y: self.contentSize.height-self.bounds.height)
+        self.setContentOffset(bottomPoint, animated: animate)
     }
     
 }
