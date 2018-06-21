@@ -14,10 +14,9 @@ extension Int {
     var threeDigitsComma: String {
         /*
          - Int 타입의 값을 세자리 마다 ',' 찍어주는 멤버 변수
-         - 돈에 관련된 단위를 표현 할때 사용
          - 반환값의 타입은 String
          - ex)1000.threeDigitsComma => 1,000
-         */
+        */
         
         let value: NSNumber = self as NSNumber
         
@@ -36,7 +35,6 @@ extension String {
     var isCheckValidEmail: Bool {
         /*
          - 정규식을 통해 유효한 이메일인지 판단해주는 멤버 변수
-         - 이메일 형식 검사를 할때 사용
          - 반환값의 타입은 Bool
          - ex) "myoungsc.dev@gamil.com".isCheckValidEmail -> true
         */
@@ -47,6 +45,23 @@ extension String {
         return emailPredicate.evaluate(with: self)
     }
     
+    func differentNumberFont(_ numberFont: UIFont, otherFont: UIFont) -> NSMutableAttributedString {
+        /*
+         - 문자열 안에 있는 숫자만 원하는 폰트로 처리 해주는 멤버 함수
+         - 반환값의 타입은 NSMutableAttributedString
+         - ex) "a1b2c3d4".differentNumberFont(UIFont.boldSystemFont(ofSize: 13),
+                                              otherFont: UIFont.systemFont(ofSize: 13))
+        */
+ 
+        let attr = NSMutableAttributedString(string: self)
+        let digitSet = CharacterSet.decimalDigits
+        for (index, ch) in self.unicodeScalars.enumerated() {
+            let font = digitSet.contains(ch) ? numberFont : otherFont
+            attr.addAttributes([.font: font], range: NSMakeRange(index, 1))
+        }
+        return attr
+    }
+    
 }
 
 //MARK: ## UIScrollView Extension ##
@@ -54,7 +69,6 @@ extension UIScrollView {
  
     func moveToBottom(_ animate: Bool) {
         /*
-         - 스크롤 뷰 하단으로 이동해주는 함수
          - 스크롤 뷰 하단으로 이동이 필요할때 사용, animate Bool 타입의 입력인자를 통해 애니메이션 여부 결정
          - 반환값은 없음
          - ex) UIScrollView.moveToBottom(true)

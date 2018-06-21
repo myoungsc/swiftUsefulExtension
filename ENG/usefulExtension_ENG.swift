@@ -14,10 +14,9 @@ extension Int {
     var threeDigitsComma: String {
         /*
          - Member variable is ',' print the value of an Int type three digits
-         - Use when expression to money
          - Return type is 'String'
          - ex)1000.threeDigitsComma => 1,000
-         */
+        */
         
         let value: NSNumber = self as NSNumber
         
@@ -35,8 +34,7 @@ extension String {
     
     var isCheckValidEmail: Bool {
         /*
-         - Member variable is check email format to regular expreesion
-         - Use when check email format
+         - A member variable that check email format to regular expreesion
          - Return type is 'Bool'
          - ex) "myoungsc.dev@gamil.com".isCheckValidEmail -> true
          */
@@ -47,6 +45,23 @@ extension String {
         return emailPredicate.evaluate(with: self)
     }
     
+    func differentNumberFont(_ numberFont: UIFont, otherFont: UIFont) -> NSMutableAttributedString {
+        /*
+         - A member function that processes number string to diffrent font in string
+         - Return type is NSMutableAttributedString
+         - ex) "a1b2c3d4".differentNumberFont(UIFont.boldSystemFont(ofSize: 13),
+                                              otherFont: UIFont.systemFont(ofSize: 13))
+         */
+        
+        let attr = NSMutableAttributedString(string: self)
+        let digitSet = CharacterSet.decimalDigits
+        for (index, ch) in self.unicodeScalars.enumerated() {
+            let font = digitSet.contains(ch) ? numberFont : otherFont
+            attr.addAttributes([.font: font], range: NSMakeRange(index, 1))
+        }
+        return attr
+    }
+    
 }
 
 //MARK: ## UIScrollView Extension ##
@@ -54,8 +69,7 @@ extension UIScrollView {
     
     func moveToBottom(_ animate: Bool) {
         /*
-         - UIScrollView content move to bottom by function
-         - Use when UIScrollView content move to bottom
+         - A member variable that UIScrollView content move to bottom
          - Return type is nil
          - ex) UIScrollView.moveToBottom(true)
          */
