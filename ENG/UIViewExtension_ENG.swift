@@ -16,13 +16,23 @@ extension UIView {
         /*
          - A Member variable that add the cornerRadius item to the inspector in xib or storyboard
          - Return type is nil
-         - Use StoryBoard, xib
+         - ex) Use StoryBoard, xib
         */
         get { return layer.cornerRadius }
         set {
             layer.cornerRadius = newValue
             layer.masksToBounds = newValue > 0
         }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat {
+        /*
+         - A Member variable that add the borderWidth item to the inspector in xib or storyboard
+         - Return type is nil
+         - ex) Use StoryBoard, xib
+         */
+        get { return layer.borderWidth }
+        set { layer.borderWidth = newValue }
     }
     
 }
