@@ -35,4 +35,14 @@ extension UIView {
         set { layer.borderWidth = newValue }
     }
     
+    @IBInspectable var borderColor: UIColor? {
+        /*
+         - StoryBoard, xib에서 UIView를 포함한 컴포넌트 항목에 borderColor 추가해주는 변수
+         - 반환값은 없음
+         - ex) StoryBoard, Xib에서 사용
+         */
+        get { return UIColor(cgColor: layer.borderColor!) }
+        set { layer.borderColor = newValue?.cgColor }
+    }
+    
 }

@@ -35,4 +35,13 @@ extension UIView {
         set { layer.borderWidth = newValue }
     }
     
+    @IBInspectable var borderColor: UIColor? {
+        /*
+         - A Member variable that add the borderColor item to the inspector in xib or storyboard
+         - Return type is nil
+         - ex) Use StoryBoard, xib
+         */
+        get { return UIColor(cgColor: layer.borderColor!) }
+        set { layer.borderColor = newValue?.cgColor }
+    }
 }
