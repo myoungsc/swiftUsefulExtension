@@ -11,6 +11,30 @@ import UIKit
 //MARK: ## String Extension ##
 extension String {
     
+    func reduceFromCount(_ reduceCount: Int, want substitution: String) -> String {
+        /*
+         - 개수에 따라 마지막 문자를 원하는 문자로 치환하는 멤버 함수
+         - 반환값의 타입은 String
+         - ex) "Swift is Awesome!!".reduceFromCount(15, want: "...") -> Swift is Awesome...
+        */
+        
+        var value = "", count = 0
+        for element in self {
+            let temp = String(element)
+            
+            if temp.utf8.count == 1 { count += 1 }
+            else { count += 2 }
+            
+            value.append(element)
+            if count > reduceCount {
+                value = String(value.dropLast())
+                value.append(substitution)
+                break
+            }
+        }
+        return value
+    }
+    
     var isCheckValidEmail: Bool {
         /*
          - 정규식을 통해 유효한 이메일인지 판단해주는 멤버 변수

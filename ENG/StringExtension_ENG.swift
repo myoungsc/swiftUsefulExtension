@@ -11,6 +11,30 @@ import UIKit
 //MARK: ## String Extension ##
 extension String {
     
+    func reduceFromCount(_ reduceCount: Int, want substitution: String) -> String {
+        /*
+         - A Member function that relpaces the last character with the desired character according by number
+         - Return type is 'String'
+         - ex) "Swift is Awesome!!".reduceFromCount(15, want: "...") -> Swift is Awesome...
+        */
+        
+        var value = "", count = 0
+        for element in self {
+            let temp = String(element)
+            
+            if temp.utf8.count == 1 { count += 1 }
+            else { count += 2 }
+            
+            value.append(element)
+            if count > reduceCount {
+                value = String(value.dropLast())
+                value.append(substitution)
+                break
+            }
+        }
+        return value
+    }
+    
     var isCheckValidEmail: Bool {
         /*
          - A member variable that check email format to regular expreesion
