@@ -11,6 +11,18 @@ import UIKit
 //MARK: ## String Extension ##
 extension String {
     
+    func stringToDate(_ format: String) -> Date {
+        /*
+         - 인자로 포멧을 받아 문자열을 Date형식으로 바꿔주는 멤버 함수
+         - 반환값 타입은 Date
+         - ex) "20180710".stringToDate("yyyyMMdd") -> 2018-07-09 15:00:00 +0000
+         */
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        guard let date = formatter.date(from: self) else { return Date() }
+        return date
+    }
+    
     func reduceFromCount(_ reduceCount: Int, want substitution: String) -> String {
         /*
          - 개수에 따라 마지막 문자를 원하는 문자로 치환하는 멤버 함수

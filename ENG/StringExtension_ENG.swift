@@ -11,6 +11,18 @@ import UIKit
 //MARK: ## String Extension ##
 extension String {
     
+    func stringToDate(_ format: String) -> Date {
+        /*
+         - A Memeber function that change String to Date by format
+         - Return type is 'Date'
+         - ex) "20180710".stringToDate("yyyyMMdd") -> 2018-07-09 15:00:00 +0000
+         */
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        guard let date = formatter.date(from: self) else { return Date() }
+        return date
+    }
+    
     func reduceFromCount(_ reduceCount: Int, want substitution: String) -> String {
         /*
          - A Member function that relpaces the last character with the desired character according by number
