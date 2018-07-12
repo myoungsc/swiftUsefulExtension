@@ -12,11 +12,21 @@ import UIKit
 //MARK: ## CALayer Extension ##
 extension CALayer {
     
+    func borderWidthColor(_ thickness: CGFloat, color: UIColor) {
+        /*
+         - borderWidth, borderColor 한줄에 처리하는 멤버 함수
+         - 반환값은 없음
+         - ex) YourView.layer.borderWidthColor(1.0, color: UIColor.black)
+         */
+        self.borderWidth = thickness
+        self.borderColor = color.cgColor
+    }
+    
     func borderLineDirection(_ directions: [UIRectEdge], color: UIColor, thickness: CGFloat) {
         /*
          - border line을 원하는 방향으로만 더해주는 멤버 함수
          - 반환값은 없음
-         - yourView.layer.borderLineDirection([.top, .bottom], color: UIColor.blue, thickness: 1.0)
+         - ex) yourView.layer.borderLineDirection([.top, .bottom], color: UIColor.blue, thickness: 1.0)
         */
         for direction in directions {
             let border = CALayer()

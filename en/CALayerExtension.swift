@@ -12,6 +12,16 @@ import UIKit
 //MARK: ## CALayer Extension ##
 extension CALayer {
     
+    func borderWidthColor(_ thickness: CGFloat, color: UIColor) {
+        /*
+         - Member function that 'borderwidth' and 'borderColor' processing to one line
+         - Retrun type is nil
+         - ex) YourView.layer.borderWidthColor(1.0, color: UIColor.black)
+         */
+        self.borderWidth = thickness
+        self.borderColor = color.cgColor
+    }
+    
     func borderLineDirection(_ directions: [UIRectEdge], color: UIColor, thickness: CGFloat) {
         /*
          - A Member function that Add border line only the desire direction
