@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 //MARK: ## UIViewController Extension ##
-extension UIViewController {    
+extension UIViewController {
+    
+    /*To be delete because problme
     func rootDismiss(_ rootViewcontroller: UIViewController, animated: Bool) {
         /*
          - Member function that moves to the first desired view controller when the view is moved to 'present modally' multiple times
@@ -20,12 +22,13 @@ extension UIViewController {
         */
         var present = self.presentingViewController
         while true {
-            if let vc = present, vc.isKind(of: rootViewcontroller.classForCoder) {
-                vc.dismiss(animated: animated, completion: nil)
+            if (present?.isKind(of: rootViewcontroller.classForCoder))! {
+                present?.dismiss(animated: animated, completion: nil)
                 break
             } else {
                 present = present?.presentedViewController
             }
         }
     }
+     */
 }

@@ -11,6 +11,21 @@ import UIKit
 //MARK: ## String Extension ##
 extension String {
     
+    func selectTextFromRange(_ range: NSRange) -> String { // Range에 맞춰서 쪼개기
+        /*
+         - Member function that 'String' separation to NSRange value and return separat 'String'
+         - Return type is 'String'
+         - ex) print("Hello".selectTextRange(NSMakeRange(2, 2))) -> llo
+         */
+        var result = ""
+        for (i, element) in self.enumerated() {
+            if i >= range.location && i <= (range.length + range.location) {
+                result.append(element)
+            }
+        }
+        return result
+    }
+    
     func stringToDate(_ format: String) -> Date {
         /*
          - A Memeber function that change String to Date by format
