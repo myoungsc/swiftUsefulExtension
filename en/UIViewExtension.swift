@@ -12,9 +12,23 @@ import UIKit
 //MARK: ## UIView Extension ##
 extension UIView {
     
+    var copyView: AnyObject? {
+        /*
+         - A computed property that copy Inherited UIVIew
+         - Return type is 'AnyObject'
+         - ex)  let originalView = UIView()
+         guard let copyView = temp.copyView as? UIView else { return }
+        */
+        
+        guard let object = NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self)) else {
+            return nil
+        }
+        return object as AnyObject
+    }
+    
     @IBInspectable var cornerRadius: CGFloat {
         /*
-         - A Member variable that add the cornerRadius item to the inspector in xib or storyboard
+         - A computed property that add the cornerRadius item to the inspector in xib or storyboard
          - Return type is nil
          - ex) Use StoryBoard, xib
         */
@@ -27,20 +41,20 @@ extension UIView {
     
     @IBInspectable var borderWidth: CGFloat {
         /*
-         - A Member variable that add the borderWidth item to the inspector in xib or storyboard
+         - A computed property that add the borderWidth item to the inspector in xib or storyboard
          - Return type is nil
          - ex) Use StoryBoard, xib
-         */
+        */
         get { return layer.borderWidth }
         set { layer.borderWidth = newValue }
     }
     
     @IBInspectable var borderColor: UIColor? {
         /*
-         - A Member variable that add the borderColor item to the inspector in xib or storyboard
+         - A computed property that add the borderColor item to the inspector in xib or storyboard
          - Return type is nil
          - ex) Use StoryBoard, xib
-         */
+        */
         get { return UIColor(cgColor: layer.borderColor!) }
         set { layer.borderColor = newValue?.cgColor }
     }
