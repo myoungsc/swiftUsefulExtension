@@ -11,6 +11,15 @@ import UIKit
 //MARK: ## String Extension ##
 extension String {
     
+    var makePhoneNumber: String {
+        /*
+         - 11자리 휴대폰번호를 만들어주는 연산 프로퍼티
+         - 반환값 타입은 String
+         - ex) "01011112222".makePhoneNumber -> 010-1111-2222
+         */
+        return self.replacingOccurrences(of: "(\\d{3})(\\d+)(\\d{4})", with: "$1-$2-$3", options: .regularExpression, range: nil)
+    }
+    
     func selectTextFromRange(_ range: NSRange) -> String { // Range에 맞춰서 쪼개기
         /*
          - 문자열에서 NSRange값에 따라서 분리한 문자열을 반환하는 멤버 함수

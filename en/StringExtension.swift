@@ -11,6 +11,15 @@ import UIKit
 //MARK: ## String Extension ##
 extension String {
     
+    var makePhoneNumber: String {
+        /*
+         - A computed property that make an 11-digit phone number
+         - Return type is 'String'
+         - ex) "01011112222".makePhoneNumber -> 010-1111-2222
+         */
+        return self.replacingOccurrences(of: "(\\d{3})(\\d+)(\\d{4})", with: "$1-$2-$3", options: .regularExpression, range: nil)
+    }
+    
     func selectTextFromRange(_ range: NSRange) -> String { // Range에 맞춰서 쪼개기
         /*
          - Member function that 'String' separation to NSRange value and return separat 'String'
