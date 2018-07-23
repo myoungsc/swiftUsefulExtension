@@ -11,6 +11,28 @@ import UIKit
 //MARK: ## String Extension ##
 extension String {
     
+    var initialKorea: String {
+        /*
+         - A computed property that 'String' convert it to korea initial character
+         - Return type is 'String'
+         - ex) "안녕하세요".initialKorea -> ㅇㄴㅎㅅㅇ
+         */
+        var initialString = ""
+        let koreaInitials: [String] = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
+        for element in self {
+            for ch in element.unicodeScalars {
+                if ch.value >= 44032 && ch.value <= 55203 { // korean
+                    let unicode = ch.value-44032
+                    let resultInitial = unicode / 21 / 28
+                    initialString += koreaInitials[Int(resultInitial)]
+                } else {
+                    initialString += String(element)
+                }
+            }
+        }
+        return initialString
+    }
+    
     var makePhoneNumber: String {
         /*
          - A computed property that make an 11-digit phone number
