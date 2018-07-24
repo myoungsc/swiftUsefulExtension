@@ -11,6 +11,17 @@ import UIKit
 
 extension UIApplication {
     
+    var statusBarView: UIView? {
+        /*
+         - 상태바를 UIView로 리턴해주는 연산 프로퍼티
+         - 반환값 타입은 UIView?
+         - if let statusBar = UIApplication.shared.statusBarView {
+                statusBar.backgroundColor = UIColor.blue
+           }
+        */
+        return value(forKey: "statusBar") as? UIView
+    }
+    
     class func topViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         /*
           - 최상위 뷰컨트롤러를 반환하는 멤버 클래스

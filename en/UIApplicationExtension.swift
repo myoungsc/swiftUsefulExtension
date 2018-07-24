@@ -11,6 +11,17 @@ import UIKit
 
 extension UIApplication {
     
+    var statusBarView: UIView? {
+        /*
+         - A computed property that return status bar
+         - Return type is UIView?
+         - if let statusBar = UIApplication.shared.statusBarView {
+                statusBar.backgroundColor = UIColor.blue
+           }
+        */
+        return value(forKey: "statusBar") as? UIView
+    }
+    
     class func topViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         /*
           - A Member class that return top viewcontroller
