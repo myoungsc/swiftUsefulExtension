@@ -11,6 +11,15 @@ import UIKit
 //MARK: ## String Extension ##
 extension String {
     
+    var reversed: String {
+        /*
+         - 문자열을 반대로 출력해주는 연산 프로퍼티
+         - 반환값 타입은 String
+         - ex) "Hello".reversed -> olleH
+         */
+        return self.reversed().map { String($0) }.joined(separator: "")
+    }
+    
     var initialKorea: String {
         /*
          - 문자열을 받아서 초성으로 구성된 문자열로 바꿔는 연산 프로퍼티

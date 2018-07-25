@@ -11,6 +11,15 @@ import UIKit
 //MARK: ## String Extension ##
 extension String {
     
+    var reversed: String {
+        /*
+         - A computed property that return a String convert reversd 
+         - Return type is 'String'
+         - ex) "Hello".reversed -> olleH
+         */
+        return self.reversed().map { String($0) }.joined(separator: "")
+    }
+    
     var initialKorea: String {
         /*
          - A computed property that 'String' convert it to korea initial character
