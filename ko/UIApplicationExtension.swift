@@ -1,8 +1,8 @@
 //
-//  UIApplicationExtension_KOR.swift
-//  dfae
+//  UIApplicationExtension.swift
+//  Swift_Wiki_Extension
 //
-//  Created by maccli1 on 2018. 7. 9..
+//  Created by myoung on 2018. 7. 9..
 //  Copyright © 2018년 myoung. All rights reserved.
 //
 

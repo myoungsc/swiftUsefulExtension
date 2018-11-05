@@ -1,5 +1,6 @@
 //
-//  usefulExtension_KOR.swift
+//  StringExtension.swift
+//  Swift_Wiki_Extension
 //
 //  Created by myoung on 2018. 6. 18..
 //  Copyright © 2018년 myoung. All rights reserved.
@@ -13,7 +14,7 @@ extension String {
     
     var reversed: String {
         /*
-         - 문자열을 반대로 출력해주는 연산 프로퍼티
+         문자열을 반대로 출력해주는 연산 프로퍼티
          - 반환값 타입은 String
          - ex) "Hello".reversed -> olleH
          */
@@ -22,7 +23,7 @@ extension String {
     
     var initialKorea: String {
         /*
-         - 문자열을 받아서 초성으로 구성된 문자열로 바꿔는 연산 프로퍼티
+         문자열을 받아서 초성으로 구성된 문자열로 바꿔는 연산 프로퍼티
          - 반환값 타입은 String
          - ex) "안녕하세요".initialKorea -> ㅇㄴㅎㅅㅇ
          */
@@ -44,16 +45,16 @@ extension String {
     
     var makePhoneNumber: String {
         /*
-         - 11자리 휴대폰번호를 만들어주는 연산 프로퍼티
+         11자리 휴대폰번호를 만들어주는 연산 프로퍼티
          - 반환값 타입은 String
          - ex) "01011112222".makePhoneNumber -> 010-1111-2222
          */
         return self.replacingOccurrences(of: "(\\d{3})(\\d+)(\\d{4})", with: "$1-$2-$3", options: .regularExpression, range: nil)
     }
     
-    func selectTextFromRange(_ range: NSRange) -> String { // Range에 맞춰서 쪼개기
+    func selectTextFromRange(_ range: NSRange) -> String {
         /*
-         - 문자열에서 NSRange값에 따라서 분리한 문자열을 반환하는 멤버 함수
+         문자열에서 NSRange값에 따라서 분리한 문자열을 반환하는 멤버 함수
          - 반환값 타입은 String
          - ex) print("안녕하세요".selectTextRange(NSMakeRange(2, 2))) -> 하세요
          */
@@ -68,7 +69,7 @@ extension String {
     
     func stringToDate(_ format: String) -> Date {
         /*
-         - 인자로 포멧을 받아 문자열을 Date형식으로 바꿔주는 멤버 함수
+         인자로 포멧을 받아 문자열을 Date형식으로 바꿔주는 멤버 함수
          - 반환값 타입은 Date
          - ex) "20180710".stringToDate("yyyyMMdd") -> 2018-07-09 15:00:00 +0000
          */
@@ -80,7 +81,7 @@ extension String {
     
     func reduceFromCount(_ reduceCount: Int, want substitution: String) -> String {
         /*
-         - 개수에 따라 마지막 문자를 원하는 문자로 치환하는 멤버 함수
+         개수에 따라 마지막 문자를 원하는 문자로 치환하는 멤버 함수
          - 반환값의 타입은 String
          - ex) "Swift is Awesome!!".reduceFromCount(15, want: "...") -> Swift is Awesome...
         */
@@ -104,7 +105,7 @@ extension String {
     
     var isCheckValidEmail: Bool {
         /*
-         - 정규식을 통해 유효한 이메일인지 판단해주는 멤버 변수
+         정규식을 통해 유효한 이메일인지 판단해주는 멤버 변수
          - 반환값의 타입은 Bool
          - ex) "myoungsc.dev@gamil.com".isCheckValidEmail -> true
         */
@@ -117,7 +118,7 @@ extension String {
     
     func differentNumberFont(_ numberFont: UIFont, otherFont: UIFont) -> NSMutableAttributedString {
         /*
-         - 문자열 안에 있는 숫자만 원하는 폰트로 처리 해주는 멤버 함수
+         문자열 안에 있는 숫자만 원하는 폰트로 처리 해주는 멤버 함수
          - 반환값의 타입은 NSMutableAttributedString
          - ex) "a1b2c3d4".differentNumberFont(UIFont.boldSystemFont(ofSize: 13),
                                               otherFont: UIFont.systemFont(ofSize: 13))

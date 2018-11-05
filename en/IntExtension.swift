@@ -1,5 +1,6 @@
 //
-//  usefulExtension_KOR.swift
+//  usefulExtension.swift
+//  Swift_Wiki_Extension
 //
 //  Created by myoung on 2018. 6. 18..
 //  Copyright © 2018년 myoung. All rights reserved.
@@ -13,8 +14,8 @@ extension Int {
     
     var threeDigitsComma: String {
         /*
-         - Member variable is ',' print the value of an Int type three digits
-         - Return type is 'String'
+         Member variable is ',' print the value of an Int type three digits
+         - Return type is String
          - ex)1000.threeDigitsComma -> 1,000
         */
         

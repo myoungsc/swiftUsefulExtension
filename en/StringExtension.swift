@@ -1,5 +1,6 @@
 //
-//  usefulExtension_KOR.swift
+//  usefulExtension.swift
+//  Swift_Wiki_Extension
 //
 //  Created by myoung on 2018. 6. 18..
 //  Copyright © 2018년 myoung. All rights reserved.
@@ -13,8 +14,8 @@ extension String {
     
     var reversed: String {
         /*
-         - A computed property that return a String convert reversd 
-         - Return type is 'String'
+         A computed property that return a String convert reversd
+         - Return type is String
          - ex) "Hello".reversed -> olleH
          */
         return self.reversed().map { String($0) }.joined(separator: "")
@@ -22,8 +23,8 @@ extension String {
     
     var initialKorea: String {
         /*
-         - A computed property that 'String' convert it to korea initial character
-         - Return type is 'String'
+         A computed property that 'String' convert it to korea initial character
+         - Return type is String
          - ex) "안녕하세요".initialKorea -> ㅇㄴㅎㅅㅇ
          */
         var initialString = ""
@@ -44,17 +45,17 @@ extension String {
     
     var makePhoneNumber: String {
         /*
-         - A computed property that make an 11-digit phone number
-         - Return type is 'String'
+         A computed property that make an 11-digit phone number
+         - Return type is String
          - ex) "01011112222".makePhoneNumber -> 010-1111-2222
          */
         return self.replacingOccurrences(of: "(\\d{3})(\\d+)(\\d{4})", with: "$1-$2-$3", options: .regularExpression, range: nil)
     }
     
-    func selectTextFromRange(_ range: NSRange) -> String { // Range에 맞춰서 쪼개기
+    func selectTextFromRange(_ range: NSRange) -> String {
         /*
-         - Member function that 'String' separation to NSRange value and return separat 'String'
-         - Return type is 'String'
+         Member function that 'String' separation to NSRange value and return separat 'String'
+         - Return type is String
          - ex) print("Hello".selectTextRange(NSMakeRange(2, 2))) -> llo
          */
         var result = ""
@@ -68,8 +69,8 @@ extension String {
     
     func stringToDate(_ format: String) -> Date {
         /*
-         - A Memeber function that change String to Date by format
-         - Return type is 'Date'
+         A Memeber function that change String to Date by format
+         - Return type is Date
          - ex) "20180710".stringToDate("yyyyMMdd") -> 2018-07-09 15:00:00 +0000
          */
         let formatter = DateFormatter()
@@ -80,8 +81,8 @@ extension String {
     
     func reduceFromCount(_ reduceCount: Int, want substitution: String) -> String {
         /*
-         - A Member function that relpaces the last character with the desired character according by number
-         - Return type is 'String'
+         A Member function that relpaces the last character with the desired character according by number
+         - Return type is String
          - ex) "Swift is Awesome!!".reduceFromCount(15, want: "...") -> Swift is Awesome...
         */
         
@@ -104,8 +105,8 @@ extension String {
     
     var isCheckValidEmail: Bool {
         /*
-         - A member variable that check email format to regular expreesion
-         - Return type is 'Bool'
+         A member variable that check email format to regular expreesion
+         - Return type is Bool
          - ex) "myoungsc.dev@gamil.com".isCheckValidEmail -> true
          */
         
@@ -117,7 +118,7 @@ extension String {
     
     func differentNumberFont(_ numberFont: UIFont, otherFont: UIFont) -> NSMutableAttributedString {
         /*
-         - A member function that processes number string to diffrent font in string
+         A member function that processes number string to diffrent font in string
          - Return type is NSMutableAttributedString
          - ex) "a1b2c3d4".differentNumberFont(UIFont.boldSystemFont(ofSize: 13),
                                               otherFont: UIFont.systemFont(ofSize: 13))

@@ -1,8 +1,8 @@
 //
 //  UINavigationBarExtension.swift
-//  dfae
+//  Swift_Wiki_Extension
 //
-//  Created by maccli1 on 2018. 7. 19..
+//  Created by myoung on 2018. 7. 19..
 //  Copyright © 2018년 myoung. All rights reserved.
 //
 
@@ -13,8 +13,8 @@ extension UINavigationBar {
     
     func showBorderLine() {
         /*
-         - A function that show lines from NavigationBar
-         - Return type is nil
+         A function that show lines from NavigationBar
+         - Return type is none
          - ex) self.navigationController?.navigationBar.showBorderLine() -> line show
         */
         findBorderLine().isHidden = false
@@ -22,8 +22,8 @@ extension UINavigationBar {
     
     func hideBorderLine() {
         /*
-         - A function that hide lines from NavigationBar
-         - Return type is nil
+         A function that hide lines from NavigationBar
+         - Return type is none
          - ex) self.navigationController?.navigationBar.hideBorderLine() -> line hidden
         */
         findBorderLine().isHidden = true
@@ -32,7 +32,7 @@ extension UINavigationBar {
     private func findBorderLine() -> UIImageView! {
         /*
          - A method that find UIImageView from NavigationBar
-         - Return type is 'UIImageView!'
+         - Return type is UIImageView!
         */
         
         return self.subviews

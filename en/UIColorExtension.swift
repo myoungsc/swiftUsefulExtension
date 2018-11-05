@@ -1,5 +1,6 @@
 //
-//  usefulExtension_KOR.swift
+//  usefulExtension.swift
+//  Swift_Wiki_Extension
 //
 //  Created by myoung on 2018. 6. 18..
 //  Copyright © 2018년 myoung. All rights reserved.
@@ -13,7 +14,7 @@ extension UIColor
 {
     class func one(_ value: CGFloat) -> UIColor {
         /*
-         - When the RGB values are the same when the use colors
+         When the RGB values are the same when the use colors
          - Return type is UIColor
          - ex) let black = UIColor.one(0.0)
          */
@@ -22,7 +23,7 @@ extension UIColor
     
     class func one(_ value: CGFloat, alpha: CGFloat) -> UIColor {
         /*
-         - When the RGB values are the same when the use colors and color transparency decision by use alpha value
+         When the RGB values are the same when the use colors and color transparency decision by use alpha value
          - Return type is UIColor
          - ex) let black = UIColor.one(0.0, alpha: 0.5)
          */

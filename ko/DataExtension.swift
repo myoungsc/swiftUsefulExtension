@@ -1,8 +1,8 @@
 //
-//  DataExtension_KOR.swift
-//  dfae
+//  DataExtension.swift
+//  Swift_Wiki_Extension
 //
-//  Created by maccli1 on 2018. 6. 25..
+//  Created by myoung on 2018. 6. 25..
 //  Copyright © 2018년 myoung. All rights reserved.
 //
 
@@ -13,7 +13,7 @@ extension Data {
     
     func dataSizeOtherFormat(_ unit: ByteCountFormatter.Units) -> String {
         /*
-         - Data 타입의 사이즈를 저장 용량 단위로 리턴해주는 멤버 함수
+         Data 타입의 사이즈를 저장 용량 단위로 리턴해주는 멤버 함수
          - 반환값의 타입은 String
          - ex) Data.dataSizeOtherFormat([.useKB]) -> "1 KB"
         */

@@ -1,8 +1,8 @@
 //
 //  UIImageExtension.swift
-//  dfae
+//  Swift_Wiki_Extension
 //
-//  Created by maccli1 on 2018. 7. 17..
+//  Created by myoung on 2018. 7. 17..
 //  Copyright © 2018년 myoung. All rights reserved.
 //
 
@@ -13,7 +13,7 @@ extension UIImage {
     
     func makeImageOneColor(_ tintColor: UIColor) -> UIImage? {
         /*
-         - 단색 Image를 만들어주는 함수
+         단색 Image를 만들어주는 함수
          - 반환값 타입은 UIImage?
          - ex) guard let makeImage = UIImage().makeImageOneColor(UIColor.red) else { return }
                -> <UIImage: 0x6000000ab4c0>, {1, 1}

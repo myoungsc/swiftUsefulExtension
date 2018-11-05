@@ -1,8 +1,8 @@
 //
-//  UITextFieldExtension_KOR.swift
-//  dfae
+//  UITextFieldExtension.swift
+//  Swift_Wiki_Extension
 //
-//  Created by maccli1 on 2018. 6. 28..
+//  Created by myoung on 2018. 6. 28..
 //  Copyright © 2018년 myoung. All rights reserved.
 //
 
@@ -14,7 +14,7 @@ extension UITextField {
         
     enum paddingDirection {
         /*
-         - Enum is use on paddingAmount(_:direction:)
+         Enum is use on paddingAmount(_:direction:)
         */
         
         case left
@@ -24,8 +24,8 @@ extension UITextField {
     
     func paddingAmount(_ amount: CGFloat, direction: UITextField.paddingDirection) {
         /*
-         - A Member function that set white space on UITextField
-         - Return type is nil
+         A Member function that set white space on UITextField
+         - Return type is none
          - UITextFeild.paddingAmount(10, direction: .both)
         */
         

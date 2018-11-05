@@ -1,8 +1,8 @@
 //
-//  UIViewcontrollerExtension_KOR.swift
-//  dfae
+//  UIViewcontrollerExtension.swift
+//  Swift_Wiki_Extension
 //
-//  Created by maccli1 on 2018. 7. 11..
+//  Created by myoung on 2018. 7. 11..
 //  Copyright © 2018년 myoung. All rights reserved.
 //
 

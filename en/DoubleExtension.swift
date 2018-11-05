@@ -1,8 +1,8 @@
 //
-//  DoubleExtension_KOR.swift
-//  dfae
+//  DoubleExtension.swift
+//  Swift_Wiki_Extension
 //
-//  Created by maccli1 on 2018. 6. 27..
+//  Created by myoung on 2018. 6. 27..
 //  Copyright © 2018년 myoung. All rights reserved.
 //
 
@@ -13,8 +13,8 @@ extension Double {
    
     func roundToPlaces(_ places: Int) -> Double {
         /*
-         - Memeber function that rounds dicimal point according to want place
-         - Return type 'Double'
+         Memeber function that rounds dicimal point according to want place
+         - Return type Double
          - ex) 0.2289.roundToPlaces(2) -> 0.23
         */
         
