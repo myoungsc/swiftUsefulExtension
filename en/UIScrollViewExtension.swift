@@ -9,16 +9,14 @@
 import Foundation
 import UIKit
 
-//MARK: ## UIScrollView Extension ##
 extension UIScrollView {
     
+    /**
+     A member variable that UIScrollView content move to bottom
+     - Return type is none
+     - ex) UIScrollView.moveToBottom(true)
+     */
     func moveToBottom(_ animate: Bool) {
-        /*
-         A member variable that UIScrollView content move to bottom
-         - Return type is none
-         - ex) UIScrollView.moveToBottom(true)
-         */
-        
         let bottomPoint = CGPoint(x: 0, y: self.contentSize.height-self.bounds.height)
         self.setContentOffset(bottomPoint, animated: animate)
     }

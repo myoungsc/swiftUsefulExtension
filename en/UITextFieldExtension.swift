@@ -9,26 +9,23 @@
 import Foundation
 import UIKit
 
-//MARK: ## UITextFeild Extension ##
 extension UITextField {
-        
+    
+    /**
+     Enum is use on paddingAmount(_:direction:)
+     */
     enum paddingDirection {
-        /*
-         Enum is use on paddingAmount(_:direction:)
-        */
-        
         case left
         case right
         case both
     }
     
+    /**
+     A Member function that set white space on UITextField
+     - Return type is none
+     - UITextFeild.paddingAmount(10, direction: .both)
+     */
     func paddingAmount(_ amount: CGFloat, direction: UITextField.paddingDirection) {
-        /*
-         A Member function that set white space on UITextField
-         - Return type is none
-         - UITextFeild.paddingAmount(10, direction: .both)
-        */
-        
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
     
         switch direction {

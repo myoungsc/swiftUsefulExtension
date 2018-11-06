@@ -11,15 +11,13 @@ import UIKit
 
 extension Double {
    
+    /**
+     Memeber function that rounds dicimal point according to want place
+     - Return type Double
+     - ex) 0.2289.roundToPlaces(2) -> 0.23
+     */
     func roundToPlaces(_ places: Int) -> Double {
-        /*
-         Memeber function that rounds dicimal point according to want place
-         - Return type Double
-         - ex) 0.2289.roundToPlaces(2) -> 0.23
-        */
-        
         let divisor = pow(10.0, Double(places))
-        
         return Darwin.round(self * divisor) / divisor
     }
     

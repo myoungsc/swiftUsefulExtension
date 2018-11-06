@@ -12,13 +12,12 @@ import UIKit
 //MARK: ## Int Extension ##
 extension Int {
     
+    /**
+     Member variable is ',' print the value of an Int type three digits
+     - Return type is String
+     - ex)1000.threeDigitsComma -> 1,000
+     */
     var threeDigitsComma: String {
-        /*
-         Member variable is ',' print the value of an Int type three digits
-         - Return type is String
-         - ex)1000.threeDigitsComma -> 1,000
-        */
-        
         let value: NSNumber = self as NSNumber
         
         let formatter = NumberFormatter()

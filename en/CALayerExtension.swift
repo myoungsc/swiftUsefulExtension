@@ -9,25 +9,24 @@
 import Foundation
 import UIKit
 
-//MARK: ## CALayer Extension ##
 extension CALayer {
     
+    /**
+     A Member function that 'borderwidth' and 'borderColor' processing to one line
+     - Retrun type is none
+     - ex) YourView.layer.borderWidthColor(1.0, color: UIColor.black)
+     */
     func borderWidthColor(_ thickness: CGFloat, color: UIColor) {
-        /*
-         A Member function that 'borderwidth' and 'borderColor' processing to one line
-         - Retrun type is none
-         - ex) YourView.layer.borderWidthColor(1.0, color: UIColor.black)
-         */
         self.borderWidth = thickness
         self.borderColor = color.cgColor
     }
     
-    func borderLineDirection(_ directions: [UIRectEdge], color: UIColor, thickness: CGFloat) {
-        /*
-         A Member function that Add border line only the desire direction
-         - Return type is none
-         - yourView.layer.borderLineDirection([.top, .bottom], color: UIColor.blue, thickness: 1.0)
-        */
+    /**
+     A Member function that Add border line only the desire direction
+     - Return type is none
+     - yourView.layer.borderLineDirection([.top, .bottom], color: UIColor.blue, thickness: 1.0)
+     */
+    func borderLineDirection(_ directions: [UIRectEdge], color: UIColor, thickness: CGFloat) {        
         for direction in directions {
             let border = CALayer()
             switch direction {

@@ -8,33 +8,31 @@
 
 import UIKit
 
-//MARK: ## UINavigationBar Extension ##
 extension UINavigationBar {
-    
+   
+    /**
+     A function that show lines from NavigationBar
+     - Return type is none
+     - ex) self.navigationController?.navigationBar.showBorderLine() -> line show
+     */
     func showBorderLine() {
-        /*
-         A function that show lines from NavigationBar
-         - Return type is none
-         - ex) self.navigationController?.navigationBar.showBorderLine() -> line show
-        */
         findBorderLine().isHidden = false
     }
     
+    /**
+     A function that hide lines from NavigationBar
+     - Return type is none
+     - ex) self.navigationController?.navigationBar.hideBorderLine() -> line hidden
+     */
     func hideBorderLine() {
-        /*
-         A function that hide lines from NavigationBar
-         - Return type is none
-         - ex) self.navigationController?.navigationBar.hideBorderLine() -> line hidden
-        */
         findBorderLine().isHidden = true
     }
     
+    /**
+     - A method that find UIImageView from NavigationBar
+     - Return type is UIImageView!
+     */
     private func findBorderLine() -> UIImageView! {
-        /*
-         - A method that find UIImageView from NavigationBar
-         - Return type is UIImageView!
-        */
-        
         return self.subviews
             .flatMap { $0.subviews }
             .compactMap { $0 as? UIImageView }

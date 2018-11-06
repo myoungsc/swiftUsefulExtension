@@ -10,7 +10,7 @@ import UIKit
 
 extension URL {
     
-    /*
+    /**
      A property that get Image Size From URL
      - Retrun type is CGSize
      - ex) guard let url = URL(string: "https://avatars3.githubusercontent.com/u/33539012?s=200&v=4") else { return }

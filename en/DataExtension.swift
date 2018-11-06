@@ -11,13 +11,12 @@ import UIKit
 
 extension Data {
     
+    /**
+     A member function that return size of data by storage unit
+     - Return type is String
+     - ex) Data.dataSizeOtherFormat([.useKB]) -> "1 KB"
+     */
     func dataSizeOtherFormat(_ unit: ByteCountFormatter.Units) -> String {
-        /*
-         A member function that return size of data by storage unit
-         - Return type is String
-         - ex) Data.dataSizeOtherFormat([.useKB]) -> "1 KB"
-        */
-        
         let bcf = ByteCountFormatter()
         bcf.allowedUnits = unit // option: .useBytes, .useKB, .useMB, .useGB ...
         bcf.countStyle = .file

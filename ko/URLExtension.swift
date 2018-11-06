@@ -10,7 +10,7 @@ import UIKit
 
 extension URL {
     
-    /*
+    /**
       이미지 URL을 통해 이미지 사이즈 가져오는 프로퍼티
       - 반환값의 타입은 CGSize
       - ex) guard let url = URL(string: "https://avatars3.githubusercontent.com/u/33539012?s=200&v=4") else { return }

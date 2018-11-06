@@ -10,13 +10,12 @@ import UIKit
 
 extension Date {
  
+    /**
+     A Member function that convert the date type to the string type
+     - Return type is String
+     - ex) Date().dateToString("yyMMdd") -> 180626
+     */
     func dateToString(_ format: String) -> String {
-        /*
-         A Member function that convert the date type to the string type
-         - Return type is String
-         - ex) Date().dateToString("yyMMdd") -> 180626
-        */
-
         let formatter = DateFormatter()
         formatter.dateFormat = format
         let value = formatter.string(from: self)

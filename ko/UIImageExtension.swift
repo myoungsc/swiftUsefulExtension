@@ -8,17 +8,15 @@
 
 import UIKit
 
-//MARK: ## UIImage extension ##
 extension UIImage {
     
+    /**
+     단색 Image를 만들어주는 함수
+     - 반환값 타입은 UIImage?
+     - ex) guard let makeImage = UIImage().makeImageOneColor(UIColor.red) else { return }
+     -> <UIImage: 0x6000000ab4c0>, {1, 1}
+     */
     func makeImageOneColor(_ tintColor: UIColor) -> UIImage? {
-        /*
-         단색 Image를 만들어주는 함수
-         - 반환값 타입은 UIImage?
-         - ex) guard let makeImage = UIImage().makeImageOneColor(UIColor.red) else { return }
-               -> <UIImage: 0x6000000ab4c0>, {1, 1}
-        */
-        
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
         tintColor.setFill()

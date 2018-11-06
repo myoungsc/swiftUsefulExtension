@@ -9,26 +9,23 @@
 import Foundation
 import UIKit
 
-//MARK: ## UITextFeild Extension ##
 extension UITextField {
-        
+    
+    /**
+     paddingAmount(_:direction:) 함수에 사용되는 enum
+     */
     enum paddingDirection {
-        /*
-         paddingAmount(_:direction:) 함수에 사용되는 enum
-        */
-        
         case left
         case right
         case both
     }
     
+    /**
+     UITextField의 사이드에 여백을 주는 멤버 함수
+     - 반환값은 없음
+     - UITextFeild.paddingAmount(10, direction: .both)
+     */
     func paddingAmount(_ amount: CGFloat, direction: UITextField.paddingDirection) {
-        /*
-         UITextField의 사이드에 여백을 주는 멤버 함수
-         - 반환값은 없음
-         - UITextFeild.paddingAmount(10, direction: .both)
-        */
-        
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
     
         switch direction {

@@ -12,13 +12,12 @@ import UIKit
 //MARK: ## Int Extension ##
 extension Int {
     
+    /**
+     Int 타입의 값을 세자리 마다 ',' 찍어주는 멤버 변수
+     - 반환값의 타입은 String
+     - ex) 1000.threeDigitsComma -> 1,000
+     */    
     var threeDigitsComma: String {
-        /*
-         Int 타입의 값을 세자리 마다 ',' 찍어주는 멤버 변수
-         - 반환값의 타입은 String
-         - ex) 1000.threeDigitsComma -> 1,000
-        */
-        
         let value: NSNumber = self as NSNumber
         
         let formatter = NumberFormatter()
