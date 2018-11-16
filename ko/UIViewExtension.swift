@@ -13,6 +13,22 @@ import UIKit
 extension UIView {
     
     /**
+     UIview를 상속받은 뷰의 원하는 방향만 둥글게 해주기
+     - 반환값은 없음
+     - ex) yourView.cornerDirectionsCornerRadius([.topLeft, .topRight], cornerRadiiSize: 10)
+     - UIRectCorner -> [.topLeft, .topRight, .bottomLeft, .bottomRight, .allCorners]
+     */
+    func cornerDirectionsCornerRadius(_ directions: UIRectCorner, cornerRadiiSize: CGFloat) {
+        let maskPath = UIBezierPath(roundedRect: self.bounds,
+                                    byRoundingCorners: directions,
+                                    cornerRadii: CGSize(width: cornerRadiiSize, height: cornerRadiiSize))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = maskPath.cgPath
+        self.layer.mask = maskLayer
+    }
+    
+    /**
      UIView를 상속받은 뷰를 복사 해주는 연산 프로퍼티
       - 반환값 타입은 AnyObject
       - ex)  let originalView = UIView()

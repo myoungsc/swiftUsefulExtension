@@ -12,6 +12,22 @@ import UIKit
 extension UIView {
     
     /**
+     A method that round the edges of the want directions in inherited view
+     - Return type is none
+     - ex) yourView.cornerDirectionsCornerRadius([.topLeft, .topRight], cornerRadiiSize: 10)
+     - UIRectCorner -> [.topLeft, .topRight, .bottomLeft, .bottomRight, .allCorners]
+     */
+    func cornerDirectionsCornerRadius(_ directions: UIRectCorner, cornerRadiiSize: CGFloat) {
+        let maskPath = UIBezierPath(roundedRect: self.bounds,
+                                    byRoundingCorners: directions,
+                                    cornerRadii: CGSize(width: cornerRadiiSize, height: cornerRadiiSize))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = maskPath.cgPath
+        self.layer.mask = maskLayer
+    }
+    
+    /**
      A computed property that copy Inherited UIVIew
      - Return type is 'AnyObject'
      - ex)  let originalView = UIView()
