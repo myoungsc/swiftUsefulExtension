@@ -13,6 +13,24 @@ import UIKit
 extension String {
     
     /**
+     A computed that return text at localized
+     - Return type is String
+     - ex) "mainPageTitle".localized
+     */
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
+    
+    /**
+     A method that return text at localized. And write comment
+     - Return type is String
+     - ex) "mainPageTitle".localizedWithComment(comment: "Title in main page")
+     */
+    func localizedWithComment(comment: String) -> String {
+        return NSLocalizedString(self, comment:comment)
+    }
+    
+    /**
      A method that returns the length and height of the text in fonts
      - Return type is CGSize
      - ex) "Hello".sizeFromFont(UIFont.systemFont(ofSize: 15.0)) -> (34.951171875, 17.900390625)

@@ -13,6 +13,24 @@ import UIKit
 extension String {
     
     /**
+     로컬라이징한 텍스트를 반환하는 연산 프로퍼티
+     - 반환값 타입은 String
+     - ex) "mainPageTitle".localized
+     */
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
+    
+    /**
+     로컬라이징한 텍스트를 반환하고, 코멘트를 적을 수 있는 메소드
+     - 반환값 타입은 String
+     - ex) "mainPageTitle".localizedWithComment(comment: "Title in main page")
+     */
+    func localizedWithComment(comment: String) -> String {
+        return NSLocalizedString(self, comment:comment)
+    }
+    
+    /**
      텍스트의 길이와 높이를 폰트에 따라 리턴해주는 메소드
      - 반환값 타입은 CGSize
      - ex) "안녕하세요".sizeFromFont(UIFont.systemFont(ofSize: 15.0)) -> (64.875, 17.900390625)
