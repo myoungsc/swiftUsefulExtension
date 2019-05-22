@@ -7,7 +7,7 @@ Pull requests freely that new extensions, better ways to change logic, translate
 
 ## Other README.MD Translations
 
-[한국어](https://github.com/myoungsc/swiftWikiExtension/blob/master/README/README_KOR.md)
+[한국어](https://github.com/myoungsc/swiftWikiExtension/blob/master/README/README_ko.md)
 
-[English](https://github.com/myoungsc/swiftWikiExtension/blob/master/README/README_ENG.md)
+[English](https://github.com/myoungsc/swiftWikiExtension/blob/master/README/README_en.md)
 

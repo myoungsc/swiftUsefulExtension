@@ -7,7 +7,8 @@ Swift를 이용해서 iOS앱을 만들면서 사용한 Extension 모음 입니�
 
 ## Other README.MD Translations
 
-[한국어](https://github.com/myoungsc/swiftWikiExtension/blob/master/README/README_KOR.md)
+[한국어](https://github.com/myoungsc/swiftWikiExtension/blob/master/README/README_ko.md)
 
-[English](https://github.com/myoungsc/swiftWikiExtension/blob/master/README/README_ENG.md)
+[English](https://github.com/myoungsc/swiftWikiExtension/blob/master/README/README_en.md)
+
 

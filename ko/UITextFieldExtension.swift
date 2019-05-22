@@ -39,4 +39,18 @@ extension UITextField {
         self.rightViewMode = .always
     }
     
+    /**
+     StoryBoard, xib에 있는 inspector에 UITextField placeHolderColor 항목을 추가해주는 연산 프로퍼티
+     - 반환값은 없음
+     - ex) StoryBaord, xib에서 사용
+     */
+    @IBInspectable var placeHolderColor: UIColor? {
+        get {
+            return self.placeHolderColor
+        }
+        set {
+            self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: newValue!])
+        }
+    }
+    
 }

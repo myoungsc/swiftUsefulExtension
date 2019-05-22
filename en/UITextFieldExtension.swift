@@ -39,4 +39,18 @@ extension UITextField {
         self.rightViewMode = .always
     }
     
+    /**
+     A computed property that add the UITextField placeHolderColor item to the inspector in xib or stroyboard
+     - Return type is none
+     - ex) Use StoryBaord, xib
+     */
+    @IBInspectable var placeHolderColor: UIColor? {
+        get {
+            return self.placeHolderColor
+        }
+        set {
+            self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: newValue!])
+        }
+    }
+    
 }
