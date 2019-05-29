@@ -156,5 +156,14 @@ extension String {
             attr.addAttributes([.font: font], range: NSMakeRange(index, 1))
         }
         return attr
-    }    
+    }
+    
+    /**
+     글자 수와 폰트에 따라 width, height 넘겨주기
+     - 반환값의 타임은 CGSize
+     - ex) "Hello".sizeFromFont(UIFont.systemFont(ofSize: 15)) -> (34.951171875, 17.900390625)
+     */
+    func sizeFromFont(_ font: UIFont) -> CGSize {
+        return self.size(withAttributes: [.font: font])
+    }
 }

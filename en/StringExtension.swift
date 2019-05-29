@@ -157,4 +157,12 @@ extension String {
         return attr
     }
     
+    /**
+     A member function that return CGSize at Text length and UIFont 
+     - Return type is CGSize
+     - ex) "Hello".sizeFromFont(UIFont.systemFont(ofSize: 15)) -> (34.951171875, 17.900390625)
+     */
+    func sizeFromFont(_ font: UIFont) -> CGSize {
+        return self.size(withAttributes: [.font: font])
+    }
 }
